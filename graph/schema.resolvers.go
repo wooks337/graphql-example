@@ -5,14 +5,13 @@ package graph
 
 import (
 	"context"
-	"fmt"
 	"graphql-example/graph/generated"
 	"graphql-example/graph/model"
 )
 
 // Programmers is the resolver for the programmers field.
 func (r *queryResolver) Programmers(ctx context.Context, skill string) ([]*model.Programmer, error) {
-	panic(fmt.Errorf("not implemented"))
+	return r.DB.GetProgrammers(skill)
 }
 
 // Query returns generated.QueryResolver implementation.
